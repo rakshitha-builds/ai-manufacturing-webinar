@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body { @apply bg-navy font-sans text-slate-50 antialiased; }
+:focus-visible { outline: 2px solid #22D3EE; outline-offset: 3px; border-radius: 6px; }
+@layer components {
+  .grad-text { @apply bg-gradient-to-r from-brand via-cyan to-brand bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer; }
+  .glass { @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-[15px] font-semibold transition duration-200 active:scale-[.97] disabled:cursor-not-allowed disabled:opacity-60; }
+  .btn-p { @apply bg-gradient-to-r from-brand to-cyan text-white shadow-[0_8px_28px_-8px_rgba(37,99,235,.8)] hover:-translate-y-0.5 hover:shadow-[0_12px_34px_-8px_rgba(34,211,238,.65)]; }
+  .btn-s { @apply border border-white/15 bg-white/5 hover:border-cyan; }
+  .field { @apply w-full rounded-xl border border-white/10 bg-white/5 px-3.5 py-3 text-slate-50 placeholder:text-mute/70 focus:border-cyan focus:outline-none focus:ring-2 focus:ring-cyan/40 aria-[invalid=true]:border-red-400; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
